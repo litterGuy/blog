@@ -21,4 +21,7 @@ func (user *UserController) UserInfo() {
 		//此处的"json"为固定死的key值，不以json为key那么记过不会以json格式返回结果
 		user.Data["json"] = &info
 	}
+
+	ui := models.GetById(id)
+	logs.Error(ui)
 }

@@ -1,7 +1,6 @@
 package task
 
 import (
-	"github.com/astaxie/beego/logs"
 	"github.com/astaxie/beego/toolbox"
 )
 
@@ -14,6 +13,6 @@ func GetTaskName() string {
 }
 
 func task() error {
-	logs.Info("the task is running")
+	//logs.Info("the task is running")
 	return nil
 }

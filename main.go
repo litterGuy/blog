@@ -1,6 +1,7 @@
 package main
 
 import (
+	"blog/controllers"
 	"blog/filter"
 	"blog/health"
 	"blog/models"
@@ -17,6 +18,8 @@ func main() {
 		beego.BConfig.WebConfig.DirectoryIndex = true
 		beego.BConfig.WebConfig.StaticDir["/swagger"] = "swagger"
 	}
+
+	beego.ErrorController(&controllers.ErrorController{})
 
 	/*
 		设置 returnOnOutput 的值(默认 true), 如果在进行到此过滤之前已经有输出，

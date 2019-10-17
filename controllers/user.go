@@ -31,3 +31,8 @@ func (user *UserController) UserInfo() {
 	ui := models.GetById(id)
 	logs.Error(ui)
 }
+
+//@router /testError [get]
+func (user * UserController) TestError()  {
+	user.Abort("500")
+}

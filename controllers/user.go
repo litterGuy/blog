@@ -10,6 +10,12 @@ type UserController struct {
 	beego.Controller
 }
 
+// @Title UserInfo
+// @Description get user info by id
+// @Param   id     query    int  true     "the user`s id"
+// @Success 200 {object} models.user
+// @Failure 400 Invalid id supplied
+// @Failure 404 User not found
 //@router /info/:id [get]
 func (user *UserController) UserInfo() {
 	logs.Info("start handle the request")

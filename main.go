@@ -5,6 +5,7 @@ import (
 	"blog/health"
 	"blog/models"
 	_ "blog/routers"
+	"blog/task"
 	"fmt"
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/orm"
@@ -41,4 +42,13 @@ func init() {
 	orm.Debug = true
 
 	toolbox.AddHealthCheck("database", &health.DatabaseCheck{})
+
+	/**
+	so if u use
+	EnableAdmin = true
+	don't add
+	toolbox.StartTask()
+	*/
+	toolbox.AddTask(task.GetTaskName(), task.GetTask())
+	//toolbox.StartTask()
 }
